@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー - Atlas Plot</title>
+<meta name="description" content="Atlas Plot のプライバシーポリシー。プロジェクトの保存場所、地図サービスへの通信、収集しない情報、お問い合わせ先を説明します。">
+<meta name="theme-color" content="#197766">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="Atlas Plot">
+<meta property="og:title" content="プライバシーポリシー - Atlas Plot">
+<meta property="og:description" content="Atlas Plot のプライバシーポリシー。プロジェクトの保存場所、地図サービスへの通信、収集しない情報、お問い合わせ先を説明します。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../"><img src="../icon.svg" alt="" width="28" height="28"><span>Atlas Plot</span></a>
+  <nav><a href="../privacy/">プライバシーポリシー</a></nav>
+</header>
+<main class="doc">
+<p class="eyebrow">Atlas Plot</p>
+<h1>プライバシーポリシー</h1>
+<p class="meta">最終更新日：<time datetime="2026-11-02">2026年11月2日</time></p>
+<p class="lead">Atlas Plot は、地図上に描いた内容をお使いのパソコンに保存する Windows アプリです。アカウント登録は不要で、プロジェクトの内容を開発者のサーバーへ送ることはありません。地図を表示するときと地名を検索するときだけ、地図サービスへ通信します。</p>
+<div class="summary"><p class="summary-title">要点</p><ul><li>アカウント登録・ログインは不要です</li><li>プロジェクトと図面は、ご自身が選んだ場所にだけ保存されます</li><li>開発者のサーバーへ、利用状況や作成内容を送信しません</li><li>通信するのは、地図の表示（国土地理院・OpenStreetMap）と地名検索（国土地理院）だけです</li><li>広告・利用状況の解析・クラッシュ情報の自動送信はありません</li></ul></div>
+<nav class="toc" aria-label="目次"><p class="summary-title">目次</p><ol><li><a href="#principles">基本方針</a></li><li><a href="#local-data">お使いのパソコンに保存される情報</a></li><li><a href="#external">外部サービスへの通信</a></li><li><a href="#export">書き出したファイル</a></li><li><a href="#use">利用目的・第三者への提供</a></li><li><a href="#retention">保存期間・削除</a></li><li><a href="#children">子どものプライバシー</a></li><li><a href="#changes">ポリシーの変更</a></li><li><a href="#contact">お問い合わせ</a></li></ol></nav>
+<section id="principles">
+<h2>1. 基本方針</h2>
+<p>Atlas Plot（以下「本アプリ」）は、Windows 向けのデスクトップアプリです。利用にあたってアカウントの作成やログインは必要ありません。</p>
+<p>本アプリは、利用者が作成したプロジェクトの内容（点・線・図形・テキスト・図面画像など）を、開発者や第三者のサーバーへ送信しません。広告 SDK、行動トラッキング、利用状況の解析、クラッシュ情報の自動送信も組み込んでいません。</p>
+<p>開発者は、本アプリを通じて、氏名・メールアドレス・端末の現在地など、個人を特定できる情報を取得しません。</p>
+</section>
+<section id="local-data">
+<h2>2. お使いのパソコンに保存される情報</h2>
+<p>本アプリは、次の情報をお使いのパソコン内に保存します。いずれも開発者へは送信されません。</p><ul><li><strong>プロジェクト</strong>：利用者が選んだフォルダに、<code>project.sqlite</code>（地図上の点・線・図形・テキスト・属性など）と <code>assets</code> フォルダ（取り込んだ図面画像）として保存します。</li><li><strong>アプリの設定</strong>：スナップの ON/OFF、座標の表示形式、最後に開いたプロジェクトの場所を、アプリ用のローカルデータフォルダ（<code>user-settings.json</code>・<code>last-project.json</code>）に保存します。</li><li><strong>作業用の一時ファイル</strong>：プロジェクトを開いている間、安定して編集・保存するために、パソコンの一時フォルダへ作業用のコピーを作成します。プロジェクトを閉じると削除します。</li><li><strong>編集中を示すロックファイル</strong>：同じ場所のプロジェクトを複数の人が同時に編集して壊すことを防ぐため、プロジェクトと同じフォルダに <code>atlas-edit.lock.json</code> を作成します。このファイルには、Windows のユーザー名（ドメイン名または PC 名付き）、編集セッション ID、最終更新時刻が含まれます。プロジェクトを閉じると削除しますが、共有フォルダに置いている場合は、同じフォルダを開く他の利用者から内容が見えることがあります。</li></ul>
+</section>
+<section id="external">
+<h2>3. 外部サービスへの通信</h2>
+<p>本アプリは、地図の表示と地名検索のために、次の外部サービスへインターネット経由でアクセスします。プロジェクトの内容や図面画像は送信しません。</p><h3>3.1. 国土地理院（地理院タイル）</h3>
+<p>背景地図（淡色地図）の画像を <code>cyberjapandata.gsi.go.jp</code> から取得します。表示中の地図の範囲とズームレベルに対応するタイルを要求するため、お使いのパソコンの IP アドレスと、閲覧している地図の範囲が国土地理院のサーバーに届きます。</p>
+<p><a href="https://www.gsi.go.jp/ABOUTUS/termsofuse.html" target="_blank" rel="noopener noreferrer">国土地理院ウェブサイトの利用規約</a> および <a href="https://maps.gsi.go.jp/help/use.html" target="_blank" rel="noopener noreferrer">地理院タイルの利用案内</a> が適用されます。</p>
+<h3>3.2. 国土地理院（住所・地名検索）</h3>
+<p>ヘッダーの検索欄に入力した住所・地名の文字列を、<code>msearch.gsi.go.jp</code> の住所検索 API へ送信し、候補の位置を取得します。検索欄に入力しない限り、この通信は行われません。入力した文字列は国土地理院のサーバーへ送られるため、個人情報や機密情報は入力しないでください。</p>
+<h3>3.3. OpenStreetMap</h3>
+<p>背景地図に OpenStreetMap を選んだとき、地図画像を <code>tile.openstreetmap.org</code> から取得します。国土地理院の場合と同様に、お使いのパソコンの IP アドレスと、閲覧している地図の範囲が OpenStreetMap Foundation のサーバーに届きます。</p>
+<p><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OpenStreetMap Foundation プライバシーポリシー</a> および <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap の著作権とライセンス</a> が適用されます。</p>
+<h3>3.4. Microsoft Store・Windows</h3>
+<p>本アプリは Microsoft Store を通じて配布します。インストール、更新、購入、評価・レビューの処理は Microsoft が行い、端末やアカウントの設定に応じて、インストール状況や診断情報を Microsoft が収集することがあります。<a href="https://www.microsoft.com/ja-jp/privacy/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft のプライバシーに関する声明</a> が適用されます。開発者は、個人を特定できる形でこれらの情報を取得しません。</p>
+</section>
+<section id="export">
+<h2>4. 書き出したファイル</h2>
+<p>PNG・PDF として書き出した画像には、地図の出典表示、取り込んだ図面、作図した内容が含まれます。書き出したファイルは、利用者が指定した場所に保存されるだけで、本アプリが自動で送信することはありません。ファイルを他の人へ渡すときは、含まれている内容をご確認ください。</p>
+</section>
+<section id="use">
+<h2>5. 利用目的・第三者への提供</h2>
+<p>開発者は、本アプリを通じて利用者の個人情報を取得しないため、その利用や第三者への提供はありません。</p>
+<p>前項の地図サービスへの通信は、利用者のパソコンから各サービスへ直接行われるもので、開発者のサーバーを経由しません。各サービスでの情報の取扱いは、それぞれのポリシーに従います。</p>
+<p>お問い合わせのメールをいただいた場合は、返信、ご要望・不具合への対応、品質改善のためにだけ、メールアドレスと内容を利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+</section>
+<section id="retention">
+<h2>6. 保存期間・削除</h2>
+<p>プロジェクトのファイルは、利用者が削除するまで保存先に残ります。アプリをアンインストールしても、利用者が選んだ保存先のプロジェクトは削除されません。不要になったときは、プロジェクトのフォルダを削除してください。</p>
+<p>アプリの設定ファイル（<code>user-settings.json</code>・<code>last-project.json</code>）は、アプリ用のローカルデータフォルダにあります。アンインストール後も残る場合は、そのフォルダを削除してください。</p>
+<p>お問い合わせでいただいたメールは、対応の完了後、必要な期間保管してから削除します。</p>
+</section>
+<section id="children">
+<h2>7. 子どものプライバシー</h2>
+<p>本アプリは、利用者の年齢を問わず、個人情報を取得しません。お子さまの利用について心配な点がある保護者の方は、下記の連絡先までご連絡ください。</p>
+</section>
+<section id="changes">
+<h2>8. ポリシーの変更</h2>
+<p>本アプリの機能の変更や法令の改正に応じて、本ポリシーを変更することがあります。変更するときは、このページに内容と最終更新日を掲載します。通信先や取得する情報の種類が変わるなど重要な変更があるときは、アプリのリリースノートなどでもお知らせします。</p>
+</section>
+<section id="contact">
+<h2>9. お問い合わせ</h2>
+<p>本ポリシーや本アプリの情報の取扱いに関するご質問は、次の連絡先までお寄せください。</p>
+<p><strong>運営者</strong>：hiroki.lab（個人開発者）</p>
+<p><strong>メール</strong>：<a href="mailto:hiroki.lab@outlook.com">hiroki.lab@outlook.com</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <p>Atlas Plot — 地図に、アイデアを。</p>
+  <p class="credit">地図の出典：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院</a>／© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors</p>
+</footer>
+</body>
+</html>

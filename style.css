@@ -1,0 +1,66 @@
+:root {
+  --brand: #197766;
+  --accent: #e4ab6c;
+  --paper: #f5f6f2;
+  --ink: #1c2421;
+  --muted: #5b6761;
+  --line: #d9ded8;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.85 "Yu Gothic UI", "Meiryo UI", "Hiragino Sans", system-ui, sans-serif;
+}
+a { color: var(--brand); text-underline-offset: 3px; }
+code { font: 0.9em Consolas, monospace; background: #e8ece6; padding: 0.1em 0.4em; border-radius: 4px; word-break: break-all; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px max(20px, calc((100% - 840px) / 2));
+  background: var(--brand); color: #fff;
+}
+.site-header a { color: #fff; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; }
+.site-header nav a { font-size: 0.9rem; opacity: 0.9; }
+.site-header nav a:hover { opacity: 1; text-decoration: underline; }
+
+.doc { max-width: 840px; margin: 0 auto; padding: 48px 20px 72px; }
+.eyebrow { margin: 0; color: var(--brand); font-weight: 700; letter-spacing: 0.08em; font-size: 0.85rem; }
+h1 { margin: 4px 0 8px; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.35; }
+h2 { margin: 48px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--brand); font-size: 1.35rem; }
+h3 { margin: 28px 0 8px; font-size: 1.05rem; }
+.meta { margin: 0 0 20px; color: var(--muted); font-size: 0.9rem; }
+.lead { font-size: 1.05rem; }
+
+.summary, .toc {
+  margin: 24px 0; padding: 16px 24px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+}
+.summary { border-left: 6px solid var(--brand); }
+.summary-title { margin: 0 0 4px; font-weight: 700; }
+.summary ul, .toc ol { margin: 0; padding-left: 1.4em; }
+.toc ol { columns: 2; column-gap: 32px; }
+.toc li { break-inside: avoid; }
+
+li { margin: 4px 0; }
+.button {
+  display: inline-block; padding: 10px 24px; border-radius: 999px;
+  background: var(--brand); color: #fff; font-weight: 700; text-decoration: none;
+}
+.button:hover { filter: brightness(1.1); }
+
+.site-footer {
+  padding: 32px 20px; text-align: center; color: var(--muted); font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+.site-footer p { margin: 4px 0; }
+
+@media (max-width: 600px) {
+  .toc ol { columns: 1; }
+  .doc { padding-top: 32px; }
+}
